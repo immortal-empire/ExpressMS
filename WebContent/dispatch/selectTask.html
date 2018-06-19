@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>调度中心</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">调度中心</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          INK
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">修改密码</a></dd>
+          <dd><a href="">退出登录</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item"><a class="" href="index.html">首页</a></li>
+        <li class="layui-nav-item">
+          <a class="" href="javascript:;">订单调度</a>
+          <dl class="layui-nav-child">
+            <dd><a href="manualDispatch.html">手动调度</a></dd>
+            <dd><a href="autoDispatch.html">自动调度</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a class="" href="editOrderState.html">订单状态修改</a></li>
+        <li class="layui-nav-item"><a class="layui-this" href="selectTask.html">任务单查询</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+        <fieldset class="layui-elem-field">
+          <legend>任务单查询</legend>
+          <div class="layui-field-box">
+          	  <form class="layui-form" action="">
+                <div class="layui-form-item">
+                  <div class="layui-inline">
+                  	<label class="layui-form-label" style="width:85px">要求完成日期</label>
+                    <div class="layui-input-inline">
+                      <input autocomplete="off" class="layui-input" placeholder="要求完成日期" type="text" value="" id="datePicker">
+                    </div>
+                  </div>
+
+                  <div class="layui-inline">
+                  	<label class="layui-form-label">任务单号</label>
+                    <div class="layui-input-inline">
+                      <input autocomplete="off" class="layui-input" placeholder="任务单号" type="text" name="name" value="">
+                    </div>
+                  </div>
+                  
+                  <div class="layui-inline">                 
+                    <label class="layui-form-label">执行分站</label>
+                    <div class="layui-input-block">
+                    	<select name="city" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
+                    	</select>
+                  	</div>
+                  </div>
+              </div>
+              
+              <div class="layui-form-item">                 
+                  <div class="layui-inline">                 
+                    <label class="layui-form-label">任务类型</label>
+                    <div class="layui-input-block">
+                    	<select name="city" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
+                    	</select>
+                  	</div>
+                  </div>
+                  
+                  <div class="layui-inline">                 
+                    <label class="layui-form-label">任务状态</label>
+                    <div class="layui-input-block">
+                    	<select name="city" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
+                    	</select>
+                  	</div>
+                  </div>
+                  
+                  <div class="layui-inline">
+                  	<label class="layui-form-label">客户姓名</label>
+                    <div class="layui-input-inline">
+                      <input autocomplete="off" class="layui-input" placeholder="客户姓名" type="text" name="name" value="">
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="layui-form-item">   
+                  <div class="layui-inline">
+                  	<label class="layui-form-label">客户电话</label>
+                    <div class="layui-input-inline">
+                      <input autocomplete="off" class="layui-input" placeholder="客户电话" type="text" name="name" value="">
+                    </div>
+                  </div>
+                  
+                  <div class="layui-inline" style="text-align:left;">
+                    <div class="layui-input-inline">
+                      <button class="layui-btn"><i class="layui-icon">&#xe615;</i>查询</button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </form>
+              <hr>
+              <table class="layui-table">
+                  <colgroup>
+                      <col width="150">
+                      <col width="200">
+                      <col>
+                  </colgroup>
+                  <thead>
+                      <tr>
+                      <th>任务单号</th>
+                      <th>订单号</th>
+                      <th>执行分站</th>
+                      <th>配送员</th>
+                      <th>要求完成时间</th>
+                      <th>任务类型</th>
+                      <th>任务状态</th>
+                      </tr> 
+                  </thead>
+                  <tbody>
+                      <tr>
+                      <td>TSK00001</td>
+                      <td>ORD11111</td>
+                      <td>沈阳分站</td>
+                      <td>熊春辉</td>
+                      <td>2018-09-20</td>
+                      <td>送货收款</td>
+                      <td>已调度</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </fieldset>
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © layui.com - 底部固定区域
+  </div>
+</div>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/dw_form_submit.js"></script>
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  
+  //执行一个laydate实例
+  laydate.render({
+    elem: '#datePicker' //指定元素
+  });
+});
+</script>
+</body>
+</html>
