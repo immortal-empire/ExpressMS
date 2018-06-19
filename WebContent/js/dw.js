@@ -8,16 +8,16 @@ layui.use(['element', 'layer'], function () {
   // +----------------------------------------------------------------------
   // | icheck
   // +----------------------------------------------------------------------
-  $('input').iCheck({
+  $('input:checkbox').iCheck({
     checkboxClass: 'icheckbox_minimal-red',
-    radioClass: 'iradio_minimal-red',
+//  radioClass: 'iradio_minimal-red',
     increaseArea: '20%' // optional
   });//checkbox美化
   $('.selectAll input').on('ifChecked', function (event) {
-    $('input').iCheck('check');
+    $('input:checkbox').iCheck('check');
   });//全选
   $('.selectAll input').on('ifUnchecked', function (event) {
-    $('input').iCheck('uncheck');
+    $('input:checkbox').iCheck('uncheck');
   });//反选
   // +----------------------------------------------------------------------
   // | 弹出层
