@@ -3,19 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>调度中心</title>
+  <title>layout 后台大布局 - Layui</title>
   <link rel="stylesheet" href="../layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-    <div class="layui-logo">调度中心</div>
+    <div class="layui-logo">layui 后台布局</div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="admin.html">用户列表</a></li>
+      <li class="layui-nav-item"><a href="member.html">会员列表</a></li>
+    </ul>
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
         <a href="javascript:;">
           <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-          INK
+          贤心
         </a>
         <dl class="layui-nav-child">
           <dd><a href="">修改密码</a></dd>
@@ -29,16 +33,33 @@
     <div class="layui-side-scroll">
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
       <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-        <li class="layui-nav-item"><a class="layui-this" href="index.html">首页</a></li>
+        <li class="layui-nav-item"><a class="layui-this" href="index.html">控制台</a></li>
         <li class="layui-nav-item">
-          <a class="" href="javascript:;">订单调度</a>
+          <a class="" href="javascript:;">系统设置</a>
           <dl class="layui-nav-child">
-            <dd><a href="manualDispatch.html">手动调度</a></dd>
-            <dd><a href="autoDispatch.html">自动调度</a></dd>
+            <dd><a href="sysConfig.html">系统变量</a></dd>
           </dl>
         </li>
-        <li class="layui-nav-item"><a class="" href="editOrderState.html">订单状态修改</a></li>
-        <li class="layui-nav-item"><a class="" href="selectTask.html">任务单查询</a></li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">用户管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="admin.html">用户列表</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">权限管理</a>
+            <dl class="layui-nav-child">
+                <dd><a href="rule.html">规则列表</a></dd>
+                <dd><a href="role.html">角色列表</a></dd>
+                <dd><a href="adminRole.html">用户角色</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item">
+                <a href="javascript:;">会员管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="member.html">会员列表</a></dd>
+                </dl>
+           </li>
       </ul>
     </div>
   </div>
