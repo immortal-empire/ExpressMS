@@ -42,8 +42,8 @@ public class AddWarehouseServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		String name = request.getParameter("warename");
-		String manager = request.getParameter("manager");
-		//String address = request.getParameter("address");
+		String address = request.getParameter("address");
+		String manager = request.getParameter("manager");		
 		String waretype = request.getParameter("waretype");
 		
 		Warehouse warehouse = new Warehouse();
@@ -53,6 +53,7 @@ public class AddWarehouseServlet extends HttpServlet {
 		
 		warehouse.setId(ID);
 		warehouse.setName(name);
+		warehouse.setAddress(address);
 		warehouse.setManager(manager);
 		warehouse.setType(waretype);
 		
