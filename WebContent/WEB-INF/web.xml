@@ -39,6 +39,5 @@
   <servlet-mapping>
     <servlet-name>PGInboundServlet</servlet-name>
     <url-pattern>/PGInboundServlet</url-pattern>
-
   </servlet-mapping>
 </web-app>
