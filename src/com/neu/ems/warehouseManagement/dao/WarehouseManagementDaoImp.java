@@ -8,6 +8,7 @@ public class WarehouseManagementDaoImp implements WarehouseManagementDao {
 
 	public List<WarehouseOrder> selectOrder(String sql, Object object) {
 		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

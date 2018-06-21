@@ -21,6 +21,7 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.neu.ems.login.controller.LoginServlet</servlet-class>
@@ -28,5 +29,16 @@
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
+
+  </servlet-mapping>
+  <servlet>
+    <display-name>PGInboundServlet</display-name>
+    <servlet-name>PGInboundServlet</servlet-name>
+    <servlet-class>com.neu.ems.warehouseManagement.controller.PGInboundServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PGInboundServlet</servlet-name>
+    <url-pattern>/PGInboundServlet</url-pattern>
+
   </servlet-mapping>
 </web-app>
