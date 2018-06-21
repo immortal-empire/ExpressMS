@@ -67,7 +67,7 @@ public class LoginServlet extends HttpServlet {
 		
 		request.getSession().setAttribute("username", name);
 		if(null == userType) {
-			response.sendRedirect(request.getContextPath() + "/.jsp");
+			response.sendRedirect(request.getContextPath() + "/login.jsp");
 		}else if("0".equals(userType)) {
 			response.sendRedirect(request.getContextPath() + "/.jsp");
 		}else if("1".equals(userType)) {
