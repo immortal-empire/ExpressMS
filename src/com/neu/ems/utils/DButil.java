@@ -10,7 +10,7 @@ public class DButil {
 		Connection conn = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.43.104:1521:orcl", "scott", "tiger");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
