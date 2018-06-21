@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.neu.ems.distribute.service.WarehouseService;
 import com.neu.ems.entity.Warehouse;
+import com.neu.ems.utils.DataNum;
 
 /**
  * Servlet implementation class AddWarehouseServlet
@@ -46,12 +47,17 @@ public class AddWarehouseServlet extends HttpServlet {
 		String waretype = request.getParameter("waretype");
 		
 		Warehouse warehouse = new Warehouse();
+		DataNum datanum = new DataNum();
+		int warehouseNum = datanum.getWarehouseNum();
+		String ID = "WH" + warehouseNum;
 		
+		warehouse.setId(ID);
 		warehouse.setName(name);
 		warehouse.setManager(manager);
 		warehouse.setType(waretype);
 		
 		WarehouseService.getInstance().addWarehouse(warehouse);
+		
 		
 		
 	}

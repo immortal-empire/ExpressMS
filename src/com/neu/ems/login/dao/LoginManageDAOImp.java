@@ -119,7 +119,20 @@ public class LoginManageDAOImp implements LoginManageDAO {
 		}finally {
 			DButil.closePs(ps);
 		}
-		
+		//库房数量的查询
+		try {
+			ps = conn.prepareStatement("select count(*) from Warehouse");
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				map.put("WH", rs.getInt(1));
+			}
+						
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			DButil.closePs(ps);
+		}
 		return map;
 	}
 

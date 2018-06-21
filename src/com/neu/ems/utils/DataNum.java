@@ -7,6 +7,7 @@ public class DataNum {
 	private int taskOrder;//任务单数
 	private int Product;//商品数量
 	private int PROrder;//配送中心购货退货单
+	private int WarehouseNum;
 	public int getNewOrder() {
 		return newOrder;
 	}
@@ -36,6 +37,12 @@ public class DataNum {
 	}
 	public void setPROrder(int pROrder) {
 		PROrder = pROrder;
+	}
+	public int getWarehouseNum() {
+		return WarehouseNum;
+	}
+	public void setWarehouseNum(int warehouseNum) {
+		WarehouseNum = warehouseNum;
 	}
 	
 }

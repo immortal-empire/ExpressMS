@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet {
 		datanum.setTaskOrder(dataNumMap.get("TK"));
 		datanum.setProduct(dataNumMap.get("PD"));
 		datanum.setPROrder(dataNumMap.get("PR"));
-		
+		datanum.setWarehouseNum(dataNumMap.get("WH"));
 		
 		request.getSession().setAttribute("username", name);
 		if(null == userType) {
