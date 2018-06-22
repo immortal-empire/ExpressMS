@@ -63,8 +63,46 @@ public class WarehouseDAOImp implements WarehouseDAO {
 	@Override
 	public int queryPageCount(String warename, String manager, int pageSize) {
 		// TODO Auto-generated method stub
+		int count=0;
+		StringBuffer sbf = new StringBuffer("");
 		
-		return 0;
+		sbf.append(" select count(*) cc from warehoue where 1=1");
+		if(warename != null && !"".equals(warename)) {
+			sbf.append(" and warename like ? ");
+			
+		}
+		if(manager != null && !"".equals(manager)) {
+			sbf.append(" and manager=? ");
+		}
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement(sbf.toString());
+			int index = 1;
+			if(warename != null && !"".equals(warename)) {
+				ps.setString(index, "%"+warename+"%");
+				index++;
+				
+			}
+			if(manager != null && !"".equals(manager)) {
+				ps.setString(index, manager);
+			}
+			
+			ResultSet rs = ps.executeQuery();
+		
+			if(rs.next()) {
+				count = rs.getInt("cc");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(0 == count%pageSize) {
+			count = count/pageSize; 
+		}else {
+			count = count/pageSize + 1;
+		}
+		return count;
 	}
 
 }
