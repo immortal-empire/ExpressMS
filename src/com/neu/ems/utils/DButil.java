@@ -18,21 +18,21 @@ public class DButil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return conn;
 	}
-	
+
 	public static void Transcation(Connection conn) {
-		
+
 		try {
 			conn.setAutoCommit(false);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public static void commit(Connection conn) {
 		try {
 			conn.commit();
@@ -41,6 +41,7 @@ public class DButil {
 			e.printStackTrace();
 		}
 	}
+
 	public static void rollback(Connection conn) {
 		try {
 			conn.rollback();
@@ -49,7 +50,7 @@ public class DButil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void closeConn(Connection conn) {
 		try {
 			conn.close();
@@ -58,9 +59,9 @@ public class DButil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void closePs(PreparedStatement ps) {
-		
+
 		try {
 			ps.close();
 		} catch (SQLException e) {

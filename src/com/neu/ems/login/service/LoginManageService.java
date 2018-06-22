@@ -12,28 +12,27 @@ import com.neu.ems.login.dao.LoginManageDAOImp;
 import com.neu.ems.utils.DButil;
 
 public class LoginManageService {
-	
+
 	private LoginManageService() {
-		
+
 	}
 
 	private static LoginManageService service = new LoginManageService();
-	
+
 	public static LoginManageService getInstance() {
 		return service;
 	}
-	
 
 	public String getUserType(Administrator administrator) {
 		// TODO Auto-generated method stub
 		Connection conn = DButil.getConn();
 		DButil.Transcation(conn);
 		String usertype = null;
-		
+
 		try {
 			LoginManageDAO logindao = new LoginManageDAOImp(conn);
 			usertype = logindao.getUserType(administrator);
-			
+
 			DButil.commit(conn);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -49,11 +48,11 @@ public class LoginManageService {
 		Connection conn = DButil.getConn();
 		DButil.Transcation(conn);
 		Map<String, Integer> map = null;
-		
+
 		try {
 			LoginManageDAO logindao = new LoginManageDAOImp(conn);
 			map = logindao.getdataNum();
-			
+
 			DButil.commit(conn);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

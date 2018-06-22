@@ -9,6 +9,5 @@ public interface LoginManageDAO {
 	String getUserType(Administrator administrator);
 
 	Map<String, Integer> getdataNum();
-	
 
 }

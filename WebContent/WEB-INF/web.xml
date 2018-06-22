@@ -21,7 +21,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.neu.ems.login.controller.LoginServlet</servlet-class>
@@ -29,7 +28,6 @@
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
-
   </servlet-mapping>
   <servlet>
     <display-name>PGInboundServlet</display-name>
@@ -39,5 +37,25 @@
   <servlet-mapping>
     <servlet-name>PGInboundServlet</servlet-name>
     <url-pattern>/PGInboundServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteWarehouseServlet</display-name>
+    <servlet-name>DeleteWarehouseServlet</servlet-name>
+    <servlet-class>com.neu.ems.distribute.controller.DeleteWarehouseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteWarehouseServlet</servlet-name>
+    <url-pattern>/deleteWarehouseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QueryWarehouseServlet</display-name>
+    <servlet-name>QueryWarehouseServlet</servlet-name>
+    <servlet-class>com.neu.ems.distribute.controller.QueryWarehouseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryWarehouseServlet</servlet-name>
+    <url-pattern>/queryWarehouseServlet</url-pattern>
   </servlet-mapping>
 </web-app>

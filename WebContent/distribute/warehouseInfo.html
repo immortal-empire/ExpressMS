@@ -69,12 +69,14 @@
         <fieldset class="layui-elem-field">
           <legend>库房信息</legend>
           <div class="layui-field-box">
-          		
+          		<div class="layui-inline" style="width:100px">
+                		<button class="layui-btn dw-dailog" 
+                		dw-url="addWarehouse.html" dw-title="新增库房" dw-width="60%" dw-height="80%">
+                		<i class="layui-icon">&#xe608;</i> 新增库房
+                	</button>
+              </div>
           	  <form class="layui-form" action="">
-                <div class="layui-form-item" style="padding: 15px;">
-                	<div class="layui-inline">
-                		<button class="layui-btn"><i class="layui-icon">&#xe608;</i> 新增库房</button>
-                	</div>
+                <div class="layui-form-item" style="padding: 15px;">                	
                 	
                 	<div class="layui-inline" style="width: 160px">
                   	
@@ -83,14 +85,14 @@
                   <div class="layui-inline">
                   	<label class="layui-form-label" style="width:85px">库房名称</label>
                     <div class="layui-input-inline">
-                      <input autocomplete="off" class="layui-input" placeholder="库房名称" type="text" value="">
+                      <input autocomplete="off" class="layui-input" placeholder="库房名称" type="text" name="warename">
                     </div>
                   </div>
 
                   <div class="layui-inline">
                   	<label class="layui-form-label">库管员</label>
                     <div class="layui-input-inline">
-                      <input autocomplete="off" class="layui-input" placeholder="库管员" type="text" name="name" value="">
+                      <input autocomplete="off" class="layui-input" placeholder="库管员" type="text" name="manager">
                     </div>
                   </div>
                   
@@ -133,7 +135,7 @@
                       <td>中心</td>
                 			<td>
                 				<button class="layui-btn layui-btn-xs dw-dailog" 
-                          	dw-url="addWarehouse.html" dw-title="修改库房信息" 
+                          	dw-url="editWarehouse.html" dw-title="修改库房信息" 
                           	dw-width="60%" dw-height="80%"
                           	style="width: 60px;" >
                             <i class="layui-icon">&#xe642;</i>编辑
@@ -154,7 +156,6 @@
 </div>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../layui/layui.js"></script>
-<script type="text/javascript" src="../js/dw_form_submit.js"></script>
 <script type="text/javascript" src="../icheck/icheck.js"></script>
 <script type="text/javascript" src="../js/dw.js"></script>
 <script>
