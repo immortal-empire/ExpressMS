@@ -9,8 +9,8 @@ public class DButil {
 	public static Connection getConn() {
 		Connection conn = null;
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.43.104:1521:orcl", "scott", "tiger");
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://58.87.122.253:3306/ExpressMS", "admin", "admin");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

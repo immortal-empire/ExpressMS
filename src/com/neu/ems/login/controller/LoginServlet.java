@@ -75,7 +75,9 @@ public class LoginServlet extends HttpServlet {
 		} else if ("0".equals(userType)) {
 			response.sendRedirect(request.getContextPath() + "/.jsp");
 		} else if ("1".equals(userType)) {
-
+			//response.sendRedirect(request.getContextPath() + "/distribute/warehouseInfo.jsp");
+			 
+			System.out.println(datanum.getWarehouseNum());
 		} else if ("2".equals(userType)) {
 
 		} else if ("3".equals(userType)) {

@@ -58,4 +58,14 @@
     <servlet-name>QueryWarehouseServlet</servlet-name>
     <url-pattern>/queryWarehouseServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditWarehouseServlet</display-name>
+    <servlet-name>EditWarehouseServlet</servlet-name>
+    <servlet-class>com.neu.ems.distribute.controller.EditWarehouseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditWarehouseServlet</servlet-name>
+    <url-pattern>/editWarehouseServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

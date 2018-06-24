@@ -63,8 +63,27 @@ public class WarehouseService {
 
 	public List<Warehouse> queryWarehouse(String warename, String manager, int pageSize, int pageIndex) {
 		// TODO Auto-generated method stub
-		
-		return null;
+		Connection conn = DButil.getConn();
+		WarehouseDAO dao = new WarehouseDAOImp(conn);
+		return dao.queryWarehouse(warename, manager, pageSize, pageIndex);
+	}
+
+	public void editWarehouse(Warehouse w) {
+		// TODO Auto-generated method stub
+		Connection conn = DButil.getConn();
+		DButil.Transcation(conn);
+
+		try {
+			WarehouseDAO warehousedao = new WarehouseDAOImp(conn);
+			warehousedao.editWarehouse(w);
+
+			DButil.commit(conn);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			DButil.rollback(conn);
+		} finally {
+			DButil.closeConn(conn);
+		}
 	}
 
 }

@@ -2,19 +2,19 @@ package com.neu.ems.utils;
 
 public class DataNum {
 
-	private int newOrder;// 新订订单数
-	private int quitOrder;// 退订订单数
-	private int taskOrder;// 任务单数
-	private int Product;// 商品数量
-	private int PROrder;// 配送中心购货退货单
-	private int WarehouseNum;
+	private static int newOrder;// 新订订单数
+	private static int quitOrder;// 退订订单数
+	private static int taskOrder;// 任务单数
+	private static int Product;// 商品数量
+	private static int PROrder;// 配送中心购货退货单
+	private static int WarehouseNum;
 
 	public int getNewOrder() {
 		return newOrder;
 	}
 
 	public void setNewOrder(int newOrder) {
-		this.newOrder = newOrder;
+		DataNum.newOrder = newOrder;
 	}
 
 	public int getQuitOrder() {
@@ -22,7 +22,7 @@ public class DataNum {
 	}
 
 	public void setQuitOrder(int quitOrder) {
-		this.quitOrder = quitOrder;
+		DataNum.quitOrder = quitOrder;
 	}
 
 	public int getTaskOrder() {
@@ -30,7 +30,7 @@ public class DataNum {
 	}
 
 	public void setTaskOrder(int taskOrder) {
-		this.taskOrder = taskOrder;
+		DataNum.taskOrder = taskOrder;
 	}
 
 	public int getProduct() {

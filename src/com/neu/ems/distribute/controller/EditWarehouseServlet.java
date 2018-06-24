@@ -6,16 +6,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.neu.ems.distribute.service.WarehouseService;
+import com.neu.ems.entity.Warehouse;
+
 /**
- * Servlet implementation class DeleteWarehouseServlet
+ * Servlet implementation class EditWarehouseServlet
  */
-public class DeleteWarehouseServlet extends HttpServlet {
+public class EditWarehouseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteWarehouseServlet() {
+    public EditWarehouseServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,7 +36,19 @@ public class DeleteWarehouseServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
+		String id = "";
+		String warename = "";
+		String address = "";
+		String manager = "";
 		
+		Warehouse w = new Warehouse();
+		w.setId(id);
+		w.setName(warename);
+		w.setAddress(address);
+		w.setManager(manager);
+		
+		WarehouseService.getInstance().editWarehouse(w);
 	}
 
 }

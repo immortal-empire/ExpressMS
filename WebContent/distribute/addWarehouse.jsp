@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +52,7 @@
                         
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                            <button type="submit" id="addbtn" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                            <button type="submit" id="addbtn" class="layui-btn">立即提交</button>
                             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                             </div>
                         </div>

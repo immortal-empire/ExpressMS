@@ -25,7 +25,7 @@ public class LoginManageDAOImp implements LoginManageDAO {
 		PreparedStatement ps = null;
 		String usertype = null;
 		try {
-			ps = conn.prepareStatement("select type from administrator where username=? and password=?");
+			ps = conn.prepareStatement("select type from Administrator where username=? and password=?");
 			ps.setString(1, administrator.getUsername());
 			ps.setString(2, administrator.getPassword());
 
@@ -54,7 +54,7 @@ public class LoginManageDAOImp implements LoginManageDAO {
 
 		// 新订订单的查询
 		try {
-			ps = conn.prepareStatement("select count(*) num from newOrder");
+			ps = conn.prepareStatement("select count(*) num from NewOrder");
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				map.put("XD", rs.getInt("num"));
@@ -68,7 +68,7 @@ public class LoginManageDAOImp implements LoginManageDAO {
 		}
 		// 退订订单的查询
 		try {
-			ps = conn.prepareStatement("select count(*) num from quitOrder");
+			ps = conn.prepareStatement("select count(*) num from QuitOrder");
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				map.put("TD", rs.getInt("num"));
@@ -82,7 +82,7 @@ public class LoginManageDAOImp implements LoginManageDAO {
 		}
 		// 任务单的查询
 		try {
-			ps = conn.prepareStatement("select count(*) num from taskOrder");
+			ps = conn.prepareStatement("select count(*) num from TaskOrder");
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				map.put("TK", rs.getInt("num"));
@@ -124,7 +124,7 @@ public class LoginManageDAOImp implements LoginManageDAO {
 		}
 		// 库房数量的查询
 		try {
-			ps = conn.prepareStatement("select count(*) num from Warehouse");
+			ps = conn.prepareStatement("select count(*) num from warehouse");
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				map.put("WH", rs.getInt("num"));

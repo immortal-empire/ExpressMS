@@ -76,6 +76,7 @@ public class AddWarehouseServlet extends HttpServlet {
 
 			WarehouseService.getInstance().addWarehouse(warehouse);
 			
+			
 			response.sendRedirect(request.getContextPath() + "/queryWarehouseServlet");
 		}
 		

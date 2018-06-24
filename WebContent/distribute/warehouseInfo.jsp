@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>库房信息展示</title>
   <link rel="stylesheet" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="//res.layui.com/layui/dist/css/layui.css"  media="all">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -38,7 +41,7 @@
           </dl>
         </li>
         <li class="layui-nav-item">
-        	<a class="" href="editOrderState.html">库房管理</a>
+        	<a class="" href="javascript:;">库房管理</a>
         	<dl class="layui-nav-child">
             <dd><a href="warehouseInfo.html">库房信息展示</a></dd>
             <dd><a href="Cwarehouse.html">库房储备设置</a></dd>
@@ -68,10 +71,11 @@
     <div style="padding: 15px;">
         <fieldset class="layui-elem-field">
           <legend>库房信息</legend>
+          
           <div class="layui-field-box">
           		<div class="layui-inline" style="width:100px">
                 		<button class="layui-btn dw-dailog" 
-                		dw-url="addWarehouse.html" dw-title="新增库房" dw-width="60%" dw-height="80%">
+                		dw-url="addWarehouse.jsp" dw-title="新增库房" dw-width="60%" dw-height="80%">
                 		<i class="layui-icon">&#xe608;</i> 新增库房
                 	</button>
               </div>
@@ -107,43 +111,13 @@
               <button class="layui-btn layui-btn-xs dw-refresh" style="visibility: hidden;">
                 <i class="layui-icon">&#x1002;</i>刷新
               </button>
-              <table class="layui-table">
-                  <colgroup>
-                      <col width="150">
-                      <col width="150">
-                      <col width="200">
-                      <col>
-                  </colgroup>
-                  <thead>
-                      <tr>
-                      <th></th>
-                      <th>库房编号</th>
-                      <th>库房名称</th>
-                      <th>库房地址</th>
-                      <th>库管员</th>
-                      <th>库房类型</th>
-                    	<th></th>
-                      </tr> 
-                  </thead>
-                  <tbody>
-                      <tr>
-                      <td>TSK00001</td>
-                      <td>WRH00001</td>
-                      <td>沈阳集散中心</td>
-                      <td>沈阳桃仙机场</td>
-                      <td>张三</td>
-                      <td>中心</td>
-                			<td>
-                				<button class="layui-btn layui-btn-xs dw-dailog" 
-                          	dw-url="editWarehouse.html" dw-title="修改库房信息" 
-                          	dw-width="60%" dw-height="80%"
-                          	style="width: 60px;" >
-                            <i class="layui-icon">&#xe642;</i>编辑
-                        </button>
-                			</td>
-                      </tr>
-                  </tbody>
-              </table>
+              
+              <div id="pTable">  
+    	  		<table class="layui-table" id="layui_table_id" lay-filter="demo"></table>  
+    			
+    			<div id="laypage"></div>  
+		  	  </div>
+		  	  
           </div>
       </fieldset>
     </div>
@@ -157,8 +131,22 @@
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../layui/layui.js"></script>
 <script type="text/javascript" src="../icheck/icheck.js"></script>
+<script type="text/javascript" src="../layui/layui.all.js" charset="utf-8"></script>
 <script type="text/javascript" src="../js/dw.js"></script>
-<script>
+<script type="text/javascript" src="js/queryWarehouse.js" charset="utf-8"></script>
+<script type="text/html" id="barDemo">
+
+  <button class="layui-btn layui-btn-xs dw-dailog" 
+                          	dw-url="editWarehouse.html" dw-title="修改库房信息" 
+                          	dw-width="60%" dw-height="80%"
+                          	style="width: 60px;" >
+                            <i class="layui-icon">&#xe642;</i>编辑
+                        </button>
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
 </script>
+<script>
+	eventListener();
+</script>
+
 </body>
 </html>
