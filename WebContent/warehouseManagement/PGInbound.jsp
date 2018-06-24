@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>购货入库</title>
   <link rel="stylesheet" href="../layui/css/layui.css">
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../icheck/minimal/red.css">
-  <script type="text/javascript" src="js/PGInbound.js"></script>
+  <script type="text/javascript" src="PGInbound.js"></script>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../icheck/icheck.js"></script>
+	<script type="text/javascript" src="../js/dw.js"></script>
+	<script type="text/javascript" src="../layui/layui.js"></script>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -61,7 +65,7 @@
     </div>
   </div>
   
- <div class="layui-body">
+  <div class="layui-body">
     <!-- 内容主体区域 -->
     <div style="padding: 25px;">
         <fieldset class="layui-elem-field">  
@@ -71,12 +75,12 @@
                 <div class="layui-form-item">
                   <div class="layui-inline">
                     <div class="layui-input-inline" style="margin:10px 100px 10px 150px">
-                      <input autocomplete="off" class="layui-input" style="width:300px"  placeholder="请输入购货单号" type="text" name="pgorder" onblur="vaildatePGOrder()">
+                      <input autocomplete="off" class="layui-input" style="width:300px"  placeholder="请输入购货单号" type="text" id="pgorder" onblur="vaildatePGOrder()">
                     </div>
                   </div>
                   <div class="layui-inline">
                   	<div class="layui-input-inline" style="margin: 10px 80px 10px 20px;">
-                  		<tr>*前两位为字母且后六位为数字</tr>
+                  		<th>*前两位为字母且后六位为数字</th>
                   		<i class="layui-icon" id="vailda_true" style="font-size: 20px; font-weight: 400;  color: green;"></i>
                   		<i class="layui-icon" id="vailda_false" style="font-size: 23px; font-weight: 400; color:red;"></i>
                   	</div>
@@ -85,8 +89,9 @@
                     <div class="layui-input-inline">
                       <button class="layui-btn"><i class="layui-icon">&#xe615;</i>查询</button>
                     </div>
-                  </div>
+                  </div>  
                 </div>
+             
               
               <hr>
               <div class="layui-btn-group">
@@ -98,81 +103,59 @@
                </div>
               </div>
               <hr>
-              <table class="layui-table">
-                  <colgroup>
-                      <col width="50">
-                      <col width="120">
-                      <col width="80">
-                      <col width="80">
-                      <col width="150">
-                      <col width="150">
-                  </colgroup>
-                  <thead>
-                      <tr>
-                      <th class="selectAll" style="text-align:center;"><input type="checkbox"></th>
-                      <th style="text-align:center;">商品名称</th>
-                      <th style="text-align:center;">订购数量</th>
-                      <th style="text-align:center;">实际到货数量</th>
-                      <th style="text-align:center;">入库日期</th>
-                      <th style="text-align:center;">备注</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr class="text-center">
-                      <td><input type="checkbox" name="id" value="1"></td>
-                      <td>贤心</td>
-                      <td>65</td>
-                      <td>65</td>
-                      <td class="text-center">2016-11-29</td>
-                      <td></td>
-                      </tr>
-                      <tr class="text-center">
-                      <td><input type="checkbox" name="id" value="2"></td>
-                      <td>许闲心</td>
-                      <td>100</td>
-                      <td>100</td>
-                      <td class="text-center">2016-11-29</td>
-                      <td></td>
-                      </tr>
-                      <tr class="text-center">
-                      <td><input type="checkbox" name="id" value="3 "></td>
-                      <td>sentsin</td>
-                      <td>90</td>
-                      <td>90</td>
-                      <td>2016-11-29</td>
-                      <td></td>
-                      </tr>
-                  </tbody>
-              </table>
+              <!--
+              	作者：1305195890@qq.com
+              	时间：2018-06-21
+              	描述：
+              	<table class="layui-table" id="test"></table>
+              -->
+              <div id="pTable">
+              	<table class="layui-table" id="layui_table_id" lay-filter="test"></table>
+              	<div id="laypage"></div>
+              </div>
               </form>
             </div>
         </fieldset>
-        <div id="test1"></div>
     </div>
   </div>
-  
   <div class="layui-footer">
     <!-- 底部固定区域 -->
     © layui.com - 底部固定区域
   </div>
 </div>
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../layui/layui.js"></script>
-<script type="text/javascript" src="../icheck/icheck.js"></script>
-<script type="text/javascript" src="../js/dw.js"></script>
-
+<!--
+	作者：1305195890@qq.com
+	时间：2018-06-21
+	描述：
 <script>
-layui.use('laypage', function(){
-  var laypage = layui.laypage;
-  //执行一个laypage实例
-  laypage.render({
-    elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
-    ,layout:['count','prev', 'page', 'next','limit','refresh','skip']//自定义排版
-    ,count: 500 //数据总数，从服务端得到
-    ,limits:[10,20,30,40,50]
-    ,groups:5
+layui.use('table', function(){
+  var table = layui.table
+  ,form = layui.form
+  var data = [{"productid":1222,"productname":"aaaaa","quantityordered":100,"realquantity":100,"date":"xxxxx","remarks":"wwwww"}]
+  table.render({
+    elem: '#test'
+    ,cellMinWidth: 80
+    ,cols: [[
+    	{type:'numbers'}
+      ,{type:'checkbox'}
+      ,{field:'productid', width:150, title: '商品ID'}
+      ,{field:'productname', width:150, title: '商品名称'}
+      ,{field:'quantityordered', width:150, title: '订购数量'}
+      ,{field:'realquantity', width:150, title: '实际到货数量'}
+      ,{field:'date', title: '入库日期', minWidth: 100}
+      ,{field:'remarks', width:400, title: '备注'}
+    ]]
+    ,data:data
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+      layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+			,limit:5
+			,limits:[5,10,15]
+      
+    }
   });
 });
 </script>
+-->
 </body>
 </html>
