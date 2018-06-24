@@ -17,3 +17,4 @@ layui.use(['layer','form'], function(){
         //return false;//注释掉这行代码后，表单将会以普通方式提交表单，否则以ajax方式提交表单
     });
 });
+

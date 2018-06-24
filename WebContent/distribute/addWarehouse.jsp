@@ -66,6 +66,6 @@
 <script type="text/javascript" src="../layui/layui.js"></script>
 <script type="text/javascript" src="../js/dw_form_submit.js"></script>
 <script type="text/javascript" src="../icheck/icheck.js"></script>
-<script type="text/javascript" src="../js/addWarehouse.js"></script>
+<script type="text/javascript" src="js/addWarehouse.js"></script>
 </body>
 </html>
